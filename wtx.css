@@ -1,0 +1,126 @@
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+}
+
+table, th {
+    border: 1px solid lightgray;
+    vertical-align: top;
+}
+
+.il {
+    font-weight: bold;
+    color: red;
+    display: inline;
+}  
+  
+
+table {
+    border-collapse: collapse;
+}
+
+.hit_table {
+   width: 100%;
+}
+
+select {
+  font-size: 11pt;
+}
+
+td {
+    padding: 3px; 
+    border: 1px dotted lightgray;
+    vertical-align: top;
+    font-size: 10pt;
+    /* font-family: "Arial Narrow", Arial, Helvetica, sans-serif; */
+    font-family: "Helvetica"; 
+}
+
+.header {
+   padding: 5px; 
+   font-weight: bold;  
+   color: darkred;  
+}
+
+.transcript {
+   padding: 5px; 
+   font-weight: bold;  
+   color: #404040;  
+}
+
+th {
+   padding: 5px; 
+   font-weight: bold;  
+   color: darkblue;
+   font-size: 11pt;
+}
+
+.document_head {
+   font-weight: normal;  
+   font-size: 14pt;
+   display: inline;
+}
+
+.section_head {
+   font-weight: bold;  
+   font-size: 12pt;
+}
+
+.section_explanation {
+   font-size: 10pt;
+   color: darkgray;
+}
+
+
+
+
+# On-off switch
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  float: right;
+}
+input.cmn-toggle-round + label {
+  padding: 2px;
+  width: 36px;
+  height: 18px;
+  background-color: lightgray;
+  border-radius: 18px;
+}
+input.cmn-toggle-round + label:before, input.cmn-toggle-round + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+input.cmn-toggle-round + label:before {
+  right: 1px;
+  background-color: #f1f1f1;
+  border-radius: 36px;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round + label:after {
+  width: 20px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: margin 0.4s;
+}
+input.cmn-toggle-round:checked + label:before {
+  background-color: lightblue;
+}
+input.cmn-toggle-round:checked + label:after {
+  margin-left: 18px;
+}
+
+

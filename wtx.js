@@ -45,14 +45,14 @@
                 console.log(latlong);
                 //console.log("lat: " + lat + "; long: " + long);
                 lat_long = {'lat':lat, 'long':long};
-                draw_globe( lat, long);
-                raw_offset_s = get_timezone( lat_long);
+                //draw_globe( lat, long);
+                raw_offset_s = get_timezone( lat_long, place);
                 return lat_long;
             },
         });
     }
 
-    function get_timezone( lat_long) {
+    function get_timezone( lat_long, place) {
         var lat = lat_long[ 'lat'];
         var long = lat_long[ 'long'];
         url = "https://maps.googleapis.com/maps/api/timezone/json?location=" + lat + ',' + long + '&timestamp=1331161200';
@@ -83,12 +83,12 @@
                 hour_str = parts[ 4].substring( 0, 2);
                 min_str = parts[ 4].substring( 3, 5);
                 hour_int = parseInt( hour_str,10);
-                am_pm = 'AM';
+                am_pm = 'in the morning';
                 if( hour_int > 12) {
                     hour_str = (hour_int - 12).toString();
-                    am_pm = 'PM';
+                    am_pm = 'in the afternoon';
                 }
-                msg = 'It is now ' + hour_str + ' ' + min_str + ' ' + am_pm;
+                msg = 'In ' + place + ' it is now ' + hour_str + ' ' + min_str + ' ' + am_pm;
                 console.log( msg);
                 speak( msg);
 
@@ -118,7 +118,7 @@
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
                 var transcript = event.results[i][0].transcript;
-                $('#transcript').append( '<br/>' + transcript);
+                $('#conversation').append( '<br/> <div class="transcript">' + transcript + "</div>");
                 process_utterance( transcript);
             }
         }
